@@ -293,7 +293,7 @@ a {
     <script type="text/javascript">moveProgressBar('10.0');</script>
     <dd class="example failed">
       <span class="failed_spec_name">test case 11 - list all departments</span>
-      <span class="duration">1.07827s</span>
+      <span class="duration">1.07228s</span>
       <div class="failure" id="failure_1">
         <div class="message"><pre>  Failure/Error: expect(true).to eq(false)
 
@@ -302,10 +302,11 @@ a {
 
     (compared using ==)
 
-    Diff:
-    @@ -1 +1 @@
-    -false
-    +true
+    Diff:[0m
+    [0m[34m@@ -1 +1 @@
+    [0m[31m-false
+    [0m[32m+true
+    [0m
   # ./spec/Inmetrics/department_spec.rb:34:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
         <div class="backtrace"><pre>./spec/Inmetrics/department_spec.rb:34:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
     <pre class="ruby"><code><span class="linenum">32</span>                expect(@departments[0]['local']).to eq('Adm')
@@ -317,13 +318,13 @@ a {
       </div>
     </dd>
     <script type="text/javascript">moveProgressBar('20.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 7 - show department by id</span><span class='duration'>0.40233s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 7 - show department by id</span><span class='duration'>0.42528s</span></dd>
     <script type="text/javascript">moveProgressBar('30.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 8 - create department</span><span class='duration'>0.40706s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 8 - create department</span><span class='duration'>0.41149s</span></dd>
     <script type="text/javascript">moveProgressBar('40.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 9 - edit department</span><span class='duration'>0.83839s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 9 - edit department</span><span class='duration'>0.82626s</span></dd>
     <script type="text/javascript">moveProgressBar('50.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 10 - delete department</span><span class='duration'>0.84451s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 10 - delete department</span><span class='duration'>0.83332s</span></dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
@@ -339,7 +340,7 @@ a {
     <script type="text/javascript">moveProgressBar('60.0');</script>
     <dd class="example failed">
       <span class="failed_spec_name">test case 1 - list all employees</span>
-      <span class="duration">0.49551s</span>
+      <span class="duration">0.86593s</span>
       <div class="failure" id="failure_2">
         <div class="message"><pre>  Failure/Error: expect(@employees.code).to eq(200)
 
@@ -360,7 +361,7 @@ a {
     <script type="text/javascript">moveProgressBar('70.0');</script>
     <dd class="example failed">
       <span class="failed_spec_name">test case 2 - show employee by ID and check its info</span>
-      <span class="duration">0.44021s</span>
+      <span class="duration">0.43769s</span>
       <div class="failure" id="failure_3">
         <div class="message"><pre>  Failure/Error: expect(@employee.code).to eq(202)
 
@@ -379,35 +380,16 @@ a {
       </div>
     </dd>
     <script type="text/javascript">moveProgressBar('80.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">test case 3 - register employee</span><span class='duration'>0.43650s</span></dd>
+    <script type="text/javascript">moveProgressBar('90.0');</script>
     <dd class="example failed">
-      <span class="failed_spec_name">test case 3 - register employee</span>
-      <span class="duration">0.41464s</span>
+      <span class="failed_spec_name">test case 4 - edit employee</span>
+      <span class="duration">0.40197s</span>
       <div class="failure" id="failure_4">
         <div class="message"><pre>  Failure/Error: expect(@employee.code).to eq(202)
 
     expected: 202
          got: 400
-
-    (compared using ==)
-  # ./spec/Inmetrics/employee_spec.rb:52:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
-        <div class="backtrace"><pre>./spec/Inmetrics/employee_spec.rb:52:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
-    <pre class="ruby"><code><span class="linenum">50</span>            @employee = register_user()
-<span class="linenum">51</span>
-<span class="offending"><span class="linenum">52</span>            expect(@employee.code).to eq(202)</span>
-<span class="linenum">53</span>            expect(@employee['empregadoId']).to be > 0
-<span class="linenum">54</span>            expect(@employee['salario']).to eq('1.000,01')
-<span class="linenum">55</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
-    <script type="text/javascript">moveProgressBar('90.0');</script>
-    <dd class="example failed">
-      <span class="failed_spec_name">test case 4 - edit employee</span>
-      <span class="duration">0.42560s</span>
-      <div class="failure" id="failure_5">
-        <div class="message"><pre>  Failure/Error: expect(@employee.code).to eq(202)
-
-    expected: 202
-         got: 500
 
     (compared using ==)
   # ./spec/Inmetrics/employee_spec.rb:62:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
@@ -421,11 +403,11 @@ a {
       </div>
     </dd>
     <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 5 - delete employee</span><span class='duration'>0.89975s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 5 - delete employee</span><span class='duration'>0.85273s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>6.29857 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "10 examples, 5 failures";</script>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>6.61719 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "10 examples, 4 failures";</script>
 </div>
 </div>
 </body>
