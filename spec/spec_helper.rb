@@ -7,7 +7,7 @@ require "allure-rspec"
 
 require_relative '../services/employee_service.rb'
 require_relative '../services/department_service.rb'
-=begin
+
 AllureRspec.configure do |config|
   config.results_directory = "report/allure-results"
   config.clean_results_directory = true
@@ -16,12 +16,11 @@ AllureRspec.configure do |config|
   config.link_tms_pattern = "http://www.jira.com/browse/{}"
   config.link_issue_pattern = "http://www.jira.com/browse/{}"
 end
-=end
+
 RSpec.configure do |config|
   include Employee
   include Department
 
-  
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -105,7 +104,7 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
-
+=end
   config.formatter = AllureRspecFormatter
   config.after(:example) do
     Allure.step(name: 'After hook step')
@@ -117,5 +116,5 @@ RSpec.configure do |config|
     )
   end
 
-=end
+
 end

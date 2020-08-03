@@ -7,13 +7,18 @@ Projeto criado com a intenção de guardar uma arquitetura simplificada de httpa
 Independente do OS utilizado
 
 ```
-Ruby 2.6
+Ruby 2.7.1
 Gems httparty, rspec e faker
 ```
 
 ### Installing
+Clone o repositório na sua máquina
 
-Instale a versão 2.6 do Ruby e execute no terminal:
+```
+git clone https://github.com/marlonrochaeng/apiHttpartyTest.git
+```
+
+Instale a versão 2.7.1 do Ruby e execute no terminal:
 
 ```
 gem install bundle
@@ -34,4 +39,14 @@ rspec
 Para rodar algum caso específico por tag, execute:
 ```
 rspec --t nometag
+```
+
+## Reports
+Os reports são gerados em formato json e html e encontram-se na pasta results
+
+Caso queira ver os reports gerados pelo Allure, instale as dependências do Allure
+e execute o comando (após execução dos testes) 
+
+```
+allure serve report/allure-results
 ```
