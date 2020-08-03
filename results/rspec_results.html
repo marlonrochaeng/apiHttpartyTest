@@ -293,29 +293,50 @@ a {
     <script type="text/javascript">moveProgressBar('10.0');</script>
     <dd class="example failed">
       <span class="failed_spec_name">test case 11 - list all departments</span>
-      <span class="duration">20.01282s</span>
+      <span class="duration">1.13755s</span>
       <div class="failure" id="failure_1">
-        <div class="message"><pre>  Failure/Error: [0m[32mexpect[0m(@departments.length).to be &gt; [1;34m0[0m
+        <div class="message"><pre>  Failure/Error: expect(@departments.length).to be &gt; 0
 
   JSON::ParserError:
     784: unexpected token at &#39;&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;HTTP Status 500 – Internal Server Error&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 500 – Internal Server Error&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&#39;
+  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/json-2.3.1/lib/json/common.rb:263:in `parse&#39;
+  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/json-2.3.1/lib/json/common.rb:263:in `parse&#39;
+  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:125:in `json&#39;
+  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:145:in `parse_supported_format&#39;
+  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:110:in `parse&#39;
+  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:69:in `call&#39;
+  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/request.rb:327:in `parse_response&#39;
+  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/request.rb:295:in `block in handle_response&#39;
+  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/response.rb:35:in `parsed_response&#39;
+  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/response.rb:124:in `method_missing&#39;
   # ./spec/Inmetrics/department_spec.rb:31:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
-        <div class="backtrace"><pre>./spec/Inmetrics/department_spec.rb:31:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
-    <pre class="ruby"><code><span class="linenum">29</span>            <span class="instance-variable">@departments</span> = <span class="constant">Department</span>.get(<span class="string"><span class="delimiter">'</span><span class="content">/departamento/list_all</span><span class="delimiter">'</span></span>, <span class="symbol">:basic_auth</span> =&gt; <span class="instance-variable">@auth</span>)
-<span class="linenum">30</span>
-<span class="offending"><span class="linenum">31</span>            <span class="keyword">expect</span>(<span class="instance-variable">@departments</span>.length).to be &gt; <span class="integer">0</span></span>
-<span class="linenum">32</span>            <span class="keyword">expect</span>(<span class="instance-variable">@departments</span>[<span class="integer">0</span>][<span class="string"><span class="delimiter">'</span><span class="content">local</span><span class="delimiter">'</span></span>]).to eq(<span class="string"><span class="delimiter">'</span><span class="content">Adm</span><span class="delimiter">'</span></span>)
-<span class="linenum">33</span>            <span class="keyword">expect</span>(<span class="instance-variable">@departments</span>.code).to eq(<span class="integer">200</span>)</code></pre>
+        <div class="backtrace"><pre>/home/rocha/.rvm/gems/ruby-2.7.1/gems/json-2.3.1/lib/json/common.rb:263:in `parse&#39;
+/home/rocha/.rvm/gems/ruby-2.7.1/gems/json-2.3.1/lib/json/common.rb:263:in `parse&#39;
+/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:125:in `json&#39;
+/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:145:in `parse_supported_format&#39;
+/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:110:in `parse&#39;
+/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:69:in `call&#39;
+/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/request.rb:327:in `parse_response&#39;
+/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/request.rb:295:in `block in handle_response&#39;
+/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/response.rb:35:in `parsed_response&#39;
+/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/response.rb:124:in `method_missing&#39;
+./spec/Inmetrics/department_spec.rb:31:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">261</span>  #
+<span class="linenum">262</span>  def parse(source, opts = {})
+<span class="offending"><span class="linenum">263</span>    Parser.new(source, **(opts||{})).parse</span>
+<span class="linenum">264</span>  end
+<span class="linenum">265</span>
+<span class="linenum">266</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
       </div>
     </dd>
     <script type="text/javascript">moveProgressBar('20.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 7 - show department by id</span><span class='duration'>0.44125s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 7 - show department by id</span><span class='duration'>0.40849s</span></dd>
     <script type="text/javascript">moveProgressBar('30.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 8 - create department</span><span class='duration'>0.61443s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 8 - create department</span><span class='duration'>0.41021s</span></dd>
     <script type="text/javascript">moveProgressBar('40.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 9 - edit department</span><span class='duration'>0.85491s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 9 - edit department</span><span class='duration'>0.82781s</span></dd>
     <script type="text/javascript">moveProgressBar('50.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 10 - delete department</span><span class='duration'>0.84230s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 10 - delete department</span><span class='duration'>0.82489s</span></dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
@@ -331,9 +352,9 @@ a {
     <script type="text/javascript">moveProgressBar('60.0');</script>
     <dd class="example failed">
       <span class="failed_spec_name">test case 1 - list all employees</span>
-      <span class="duration">0.55310s</span>
+      <span class="duration">0.46763s</span>
       <div class="failure" id="failure_2">
-        <div class="message"><pre>  Failure/Error: [0m[32mexpect[0m(@employees.code).to eq([1;34m200[0m)
+        <div class="message"><pre>  Failure/Error: expect(@employees.code).to eq(200)
 
     expected: 200
          got: 500
@@ -341,18 +362,20 @@ a {
     (compared using ==)
   # ./spec/Inmetrics/employee_spec.rb:37:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
         <div class="backtrace"><pre>./spec/Inmetrics/employee_spec.rb:37:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
-    <pre class="ruby"><code><span class="linenum">35</span>            <span class="instance-variable">@employees</span> = <span class="constant">Employee</span>.get(<span class="string"><span class="delimiter">'</span><span class="content">/empregado/list_all</span><span class="delimiter">'</span></span>, <span class="symbol">:basic_auth</span> =&gt; <span class="instance-variable">@auth</span>)
-<span class="linenum">36</span>            <span class="keyword">expect</span>(<span class="instance-variable">@employees</span>.length).to be &gt; <span class="integer">0</span>
-<span class="offending"><span class="linenum">37</span>            <span class="keyword">expect</span>(<span class="instance-variable">@employees</span>.code).to eq(<span class="integer">200</span>)</span>
-<span class="linenum">38</span>        <span class="keyword">end</span></code></pre>
+    <pre class="ruby"><code><span class="linenum">35</span>            @employees = Employee.get('/empregado/list_all', :basic_auth => @auth)
+<span class="linenum">36</span>            expect(@employees.length).to be > 0
+<span class="offending"><span class="linenum">37</span>            expect(@employees.code).to eq(200)</span>
+<span class="linenum">38</span>        end
+<span class="linenum">39</span>
+<span class="linenum">40</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
       </div>
     </dd>
     <script type="text/javascript">moveProgressBar('70.0');</script>
     <dd class="example failed">
       <span class="failed_spec_name">test case 2 - show employee by ID and check its info</span>
-      <span class="duration">0.42770s</span>
+      <span class="duration">0.42172s</span>
       <div class="failure" id="failure_3">
-        <div class="message"><pre>  Failure/Error: [0m[32mexpect[0m(@employee.code).to eq([1;34m202[0m)
+        <div class="message"><pre>  Failure/Error: expect(@employee.code).to eq(202)
 
     expected: 202
          got: 500
@@ -360,40 +383,42 @@ a {
     (compared using ==)
   # ./spec/Inmetrics/employee_spec.rb:43:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
         <div class="backtrace"><pre>./spec/Inmetrics/employee_spec.rb:43:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
-    <pre class="ruby"><code><span class="linenum">41</span>            <span class="instance-variable">@employee</span> = <span class="constant">Employee</span>.get(<span class="string"><span class="delimiter">'</span><span class="content">/empregado/list/</span><span class="delimiter">'</span></span>+<span class="instance-variable">@employee_id</span>.to_s, <span class="symbol">:basic_auth</span> =&gt; <span class="instance-variable">@auth</span>)
+    <pre class="ruby"><code><span class="linenum">41</span>            @employee = Employee.get('/empregado/list/'+@employee_id.to_s, :basic_auth => @auth)
 <span class="linenum">42</span> 
-<span class="offending"><span class="linenum">43</span>            <span class="keyword">expect</span>(<span class="instance-variable">@employee</span>.code).to eq(<span class="integer">202</span>)</span>
-<span class="linenum">44</span>            <span class="keyword">expect</span>(<span class="instance-variable">@employee</span>[<span class="string"><span class="delimiter">'</span><span class="content">sexo</span><span class="delimiter">'</span></span>]).to eq(<span class="string"><span class="delimiter">&quot;</span><span class="content">m</span><span class="delimiter">&quot;</span></span>)
-<span class="linenum">45</span>            <span class="keyword">expect</span>(<span class="instance-variable">@employee</span>[<span class="string"><span class="delimiter">'</span><span class="content">cpf</span><span class="delimiter">'</span></span>]).to eq(<span class="string"><span class="delimiter">&quot;</span><span class="content">585.947.930-14</span><span class="delimiter">&quot;</span></span>)</code></pre>
+<span class="offending"><span class="linenum">43</span>            expect(@employee.code).to eq(202)</span>
+<span class="linenum">44</span>            expect(@employee['sexo']).to eq("m")
+<span class="linenum">45</span>            expect(@employee['cpf']).to eq("585.947.930-14")
+<span class="linenum">46</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
       </div>
     </dd>
     <script type="text/javascript">moveProgressBar('80.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 3 - register employee</span><span class='duration'>0.45310s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 3 - register employee</span><span class='duration'>0.41760s</span></dd>
     <script type="text/javascript">moveProgressBar('90.0');</script>
     <dd class="example failed">
       <span class="failed_spec_name">test case 4 - edit employee</span>
-      <span class="duration">0.43990s</span>
+      <span class="duration">0.42478s</span>
       <div class="failure" id="failure_4">
-        <div class="message"><pre>  Failure/Error: [0m[32mexpect[0m(@employee.code).to eq([1;34m202[0m)
+        <div class="message"><pre>  Failure/Error: expect(@employee.code).to eq(202)
 
     expected: 202
-         got: 400
+         got: 500
 
     (compared using ==)
   # ./spec/Inmetrics/employee_spec.rb:62:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
         <div class="backtrace"><pre>./spec/Inmetrics/employee_spec.rb:62:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
-    <pre class="ruby"><code><span class="linenum">60</span>            <span class="instance-variable">@employee</span> = <span class="constant">Employee</span>.put(<span class="string"><span class="delimiter">'</span><span class="content">/empregado/alterar/</span><span class="delimiter">'</span></span>+<span class="instance-variable">@employee_id</span>.to_s, <span class="symbol">:basic_auth</span> =&gt; <span class="instance-variable">@auth</span>, <span class="symbol">:body</span> =&gt; <span class="instance-variable">@employee_to_add</span>.to_json, <span class="symbol">:headers</span> =&gt; <span class="instance-variable">@headers</span>)
+    <pre class="ruby"><code><span class="linenum">60</span>            @employee = Employee.put('/empregado/alterar/'+@employee_id.to_s, :basic_auth => @auth, :body => @employee_to_add.to_json, :headers => @headers)
 <span class="linenum">61</span>            
-<span class="offending"><span class="linenum">62</span>            <span class="keyword">expect</span>(<span class="instance-variable">@employee</span>.code).to eq(<span class="integer">202</span>)</span>
-<span class="linenum">63</span>            <span class="keyword">expect</span>(<span class="instance-variable">@employee</span>[<span class="string"><span class="delimiter">'</span><span class="content">salario</span><span class="delimiter">'</span></span>]).to eq(<span class="string"><span class="delimiter">'</span><span class="content">11.000,01</span><span class="delimiter">'</span></span>)
-<span class="linenum">64</span>            <span class="comment">#validation could goes on</span></code></pre>
+<span class="offending"><span class="linenum">62</span>            expect(@employee.code).to eq(202)</span>
+<span class="linenum">63</span>            expect(@employee['salario']).to eq('11.000,01')
+<span class="linenum">64</span>            #validation could goes on
+<span class="linenum">65</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
       </div>
     </dd>
     <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 5 - delete employee</span><span class='duration'>0.87660s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 5 - delete employee</span><span class='duration'>0.83631s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>25.69714 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>6.23015 seconds</strong>";</script>
 <script type="text/javascript">document.getElementById('totals').innerHTML = "10 examples, 4 failures";</script>
 </div>
 </div>
