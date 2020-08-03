@@ -1,3 +1,1 @@
 --require spec_helper
---format html --out results/rspec_results.html
---format json --out results/rspec_results.json
