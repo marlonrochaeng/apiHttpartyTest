@@ -4,3 +4,4 @@ source 'https://rubygems.org'
     gem 'rspec'
     gem 'faker'
     gem "allure-rspec"
+    gem 'rake'
