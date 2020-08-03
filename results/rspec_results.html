@@ -293,50 +293,38 @@ a {
     <script type="text/javascript">moveProgressBar('10.0');</script>
     <dd class="example failed">
       <span class="failed_spec_name">test case 11 - list all departments</span>
-      <span class="duration">1.13755s</span>
+      <span class="duration">1.15159s</span>
       <div class="failure" id="failure_1">
-        <div class="message"><pre>  Failure/Error: expect(@departments.length).to be &gt; 0
+        <div class="message"><pre>  Failure/Error: expect(true).to eq(false)
 
-  JSON::ParserError:
-    784: unexpected token at &#39;&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;title&gt;HTTP Status 500 – Internal Server Error&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 500 – Internal Server Error&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&#39;
-  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/json-2.3.1/lib/json/common.rb:263:in `parse&#39;
-  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/json-2.3.1/lib/json/common.rb:263:in `parse&#39;
-  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:125:in `json&#39;
-  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:145:in `parse_supported_format&#39;
-  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:110:in `parse&#39;
-  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:69:in `call&#39;
-  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/request.rb:327:in `parse_response&#39;
-  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/request.rb:295:in `block in handle_response&#39;
-  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/response.rb:35:in `parsed_response&#39;
-  # /home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/response.rb:124:in `method_missing&#39;
-  # ./spec/Inmetrics/department_spec.rb:31:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
-        <div class="backtrace"><pre>/home/rocha/.rvm/gems/ruby-2.7.1/gems/json-2.3.1/lib/json/common.rb:263:in `parse&#39;
-/home/rocha/.rvm/gems/ruby-2.7.1/gems/json-2.3.1/lib/json/common.rb:263:in `parse&#39;
-/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:125:in `json&#39;
-/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:145:in `parse_supported_format&#39;
-/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:110:in `parse&#39;
-/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/parser.rb:69:in `call&#39;
-/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/request.rb:327:in `parse_response&#39;
-/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/request.rb:295:in `block in handle_response&#39;
-/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/response.rb:35:in `parsed_response&#39;
-/home/rocha/.rvm/gems/ruby-2.7.1/gems/httparty-0.18.1/lib/httparty/response.rb:124:in `method_missing&#39;
-./spec/Inmetrics/department_spec.rb:31:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
-    <pre class="ruby"><code><span class="linenum">261</span>  #
-<span class="linenum">262</span>  def parse(source, opts = {})
-<span class="offending"><span class="linenum">263</span>    Parser.new(source, **(opts||{})).parse</span>
-<span class="linenum">264</span>  end
-<span class="linenum">265</span>
-<span class="linenum">266</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
+    expected: false
+         got: true
+
+    (compared using ==)
+
+    Diff:[0m
+    [0m[34m@@ -1 +1 @@
+    [0m[31m-false
+    [0m[32m+true
+    [0m
+  # ./spec/Inmetrics/department_spec.rb:34:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/Inmetrics/department_spec.rb:34:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">32</span>                expect(@departments[0]['local']).to eq('Adm')
+<span class="linenum">33</span>            else
+<span class="offending"><span class="linenum">34</span>                expect(true).to eq(false)</span>
+<span class="linenum">35</span>            end
+<span class="linenum">36</span>        end
+<span class="linenum">37</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
       </div>
     </dd>
     <script type="text/javascript">moveProgressBar('20.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 7 - show department by id</span><span class='duration'>0.40849s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 7 - show department by id</span><span class='duration'>0.43052s</span></dd>
     <script type="text/javascript">moveProgressBar('30.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 8 - create department</span><span class='duration'>0.41021s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 8 - create department</span><span class='duration'>0.41436s</span></dd>
     <script type="text/javascript">moveProgressBar('40.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 9 - edit department</span><span class='duration'>0.82781s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 9 - edit department</span><span class='duration'>0.84175s</span></dd>
     <script type="text/javascript">moveProgressBar('50.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 10 - delete department</span><span class='duration'>0.82489s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 10 - delete department</span><span class='duration'>0.83615s</span></dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
@@ -352,7 +340,7 @@ a {
     <script type="text/javascript">moveProgressBar('60.0');</script>
     <dd class="example failed">
       <span class="failed_spec_name">test case 1 - list all employees</span>
-      <span class="duration">0.46763s</span>
+      <span class="duration">0.47448s</span>
       <div class="failure" id="failure_2">
         <div class="message"><pre>  Failure/Error: expect(@employees.code).to eq(200)
 
@@ -373,7 +361,7 @@ a {
     <script type="text/javascript">moveProgressBar('70.0');</script>
     <dd class="example failed">
       <span class="failed_spec_name">test case 2 - show employee by ID and check its info</span>
-      <span class="duration">0.42172s</span>
+      <span class="duration">0.43624s</span>
       <div class="failure" id="failure_3">
         <div class="message"><pre>  Failure/Error: expect(@employee.code).to eq(202)
 
@@ -392,11 +380,11 @@ a {
       </div>
     </dd>
     <script type="text/javascript">moveProgressBar('80.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 3 - register employee</span><span class='duration'>0.41760s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 3 - register employee</span><span class='duration'>0.41534s</span></dd>
     <script type="text/javascript">moveProgressBar('90.0');</script>
     <dd class="example failed">
       <span class="failed_spec_name">test case 4 - edit employee</span>
-      <span class="duration">0.42478s</span>
+      <span class="duration">0.43631s</span>
       <div class="failure" id="failure_4">
         <div class="message"><pre>  Failure/Error: expect(@employee.code).to eq(202)
 
@@ -415,10 +403,10 @@ a {
       </div>
     </dd>
     <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">test case 5 - delete employee</span><span class='duration'>0.83631s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">test case 5 - delete employee</span><span class='duration'>0.87287s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>6.23015 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>6.36368 seconds</strong>";</script>
 <script type="text/javascript">document.getElementById('totals').innerHTML = "10 examples, 4 failures";</script>
 </div>
 </div>

@@ -27,10 +27,12 @@ describe 'DEPARTMENTS' do
 
         it 'test case 11 - list all departments' do
             @departments = Department.get('/departamento/list_all', :basic_auth => @auth)
-
-            expect(@departments.length).to be > 0
-            expect(@departments[0]['local']).to eq('Adm')
-            expect(@departments.code).to eq(200)
+            if @departments.code == 200 
+                expect(@departments.length).to be > 0
+                expect(@departments[0]['local']).to eq('Adm')
+            else
+                expect(true).to eq(false)
+            end
         end
 
         it 'test case 7 - show department by id' do
